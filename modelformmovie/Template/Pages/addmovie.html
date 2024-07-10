@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Add movie Data</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" >
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+
+        <div class="container mt-5 pt-5 p-4 bg-danger " >
+            <h1 class="text-white">Fill The Movie Drtails</h1>
+            <hr>
+            <div class="row jumbotro">
+                <form method="POST" align="center" class="form-group">
+                    {% csrf_token  %}
+                    {{obj.as_p}}
+                    <input type="submit" class="btn btn-secondary " value="submit">
+                </form>
+                {% if submit %}
+                <p style="color:green">submited form successfully</p>
+                {% endif %}
+            </div>
+
+        </div>
+      
+        <script src="" async defer></script>
+    </body>
+</html>

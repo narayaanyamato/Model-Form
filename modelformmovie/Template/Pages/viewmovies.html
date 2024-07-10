@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>view movie details </title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" >
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+
+        {% if movie_list %}
+      
+        <table class="table jumbotron mt-5 pt-5 text-white">
+            <thead>
+              <tr class="bg-danger">
+                <th scope="col">Title</th>
+                <th scope="col">Rating</th>
+                <th scope="col">Cast</th>
+                <th scope="col">Release</th>
+                <th scope="col">Gener</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for movie in movie_list %}  
+           
+              <tr>
+                <th scope="row">{{movie.title}}</th>
+                <td>{{movie.rating}}</td>
+                <td>{{movie.cast}}</td>
+                <td>{{movie.release}}</td>
+                <td>{{movie.gener}}</td>
+              </tr>
+             {% endfor %}
+           
+            </tbody>
+          </table>
+         {% else %}
+         <p>data nt found</p>
+         {% endif %}
+        <script src="" async defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
